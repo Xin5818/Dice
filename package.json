@@ -1,0 +1,9 @@
+{
+  "name": "dice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "骰子模拟及点数统计",
+  "scripts": {
+    "start": "npx --yes serve . -p 3000"
+  }
+}

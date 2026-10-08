@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>骰子模拟及点数统计</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>骰子模拟及点数统计</h1>
+        <p class="subtitle">投掷单个骰子，观察 1～6 点数的分布情况</p>
+      </header>
+
+      <section class="dice-panel">
+        <div class="dice-display" id="diceDisplay" aria-live="polite">
+          <div class="dice-face" id="diceFace" data-face="0">
+            <span class="dice-placeholder">?</span>
+          </div>
+        </div>
+        <p class="current-result">
+          本次点数：<strong id="currentRoll">—</strong>
+        </p>
+        <p class="total-rolls">
+          总投掷次数：<strong id="totalRolls">0</strong> 次
+        </p>
+        <div class="actions">
+          <button type="button" class="btn btn-primary" id="rollBtn">
+            掷骰子
+          </button>
+          <button type="button" class="btn btn-secondary" id="resetBtn">
+            重置
+          </button>
+        </div>
+      </section>
+
+      <section class="stats-panel">
+        <h2>点数统计</h2>
+        <div class="table-wrapper">
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th>点数</th>
+                <th>出现次数</th>
+                <th>出现概率</th>
+              </tr>
+            </thead>
+            <tbody id="statsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="chart-panel">
+        <h2>出现次数柱状图</h2>
+        <div class="chart" id="chart" aria-hidden="true">
+          <div class="chart-y-axis" id="chartYAxis"></div>
+          <div class="chart-body">
+            <div class="chart-bars" id="chartBars"></div>
+            <div class="chart-x-axis" id="chartXAxis"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
